@@ -9,7 +9,9 @@ const day = document.getElementById("day");
 const daysoutput = document.querySelector(".d3");
 const yearsoutput = document.querySelector(".y3");
 const monthsoutput = document.querySelector(".m3");
-const ErrorChecker=document.querySelectorAll(".box");
+const one=document.querySelector("#one");
+const two=document.querySelector("#two");
+const three=document.querySelector("#three");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   validate();
@@ -83,11 +85,14 @@ function calculateAge() {
     y3--;
   }
 
-  //dispalying
-
-  daysoutput.textContent = d3;
-  monthsoutput.textContent = m3;
-  yearsoutput.textContent = y3;
+  //dispalying output
+  if(!(one.classList.contains("error")||(two.classList.contains("error"))||(three.classList.contains("error"))))
+  {
+    daysoutput.textContent = d3;
+    monthsoutput.textContent = m3;
+    yearsoutput.textContent = y3;
+  }
+ 
 }
 function getDaysInMonth(year, month) {
   return new Date(year, month, 0).getDate();
