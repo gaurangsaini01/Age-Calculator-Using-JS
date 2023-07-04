@@ -13,7 +13,6 @@ const ErrorChecker=document.querySelectorAll(".box");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
   validate();
-
   calculateAge();
 });
 
